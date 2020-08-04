@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildTypes.each {
+        it.buildConfigField "String", "BUTTON_APP_ID", '"' + buttonApplicationId + '"'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Inclusion of the Button SDK via `implementation` will ensure its availability at runtime
+    // See: https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph
+    implementation 'com.usebutton:android-sdk:6+'
+}
+
+// You can replace this with your own method for artifact delivery
+// However, you can run :generatePomFileForReleasePublication to verify the POM for this SDK
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.yourcompany.YourSDK'
+                artifactId = 'example'
+                version = '0.0.1'
+            }
+            // Creates a Maven publication called “debug”.
+            debug(MavenPublication) {
+                from components.debug
+
+                groupId = 'com.yourcompany.YourSDK'
+                artifactId = 'example-debug'
+                version = '0.0.1-debug'
+            }
+        }
+    }
+}

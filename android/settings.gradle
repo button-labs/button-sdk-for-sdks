@@ -1,0 +1,3 @@
+include ':YourSDK'
+include ':PartnerApp'
+rootProject.name = "sdkinsdk"
