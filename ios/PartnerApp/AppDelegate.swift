@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*
          Start YourSDK
          */
-        YourSDK.start()
+        YourSDKInterface.start()
         
         return true
     }

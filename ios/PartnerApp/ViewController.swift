@@ -11,7 +11,7 @@ class ViewController: UIViewController {
         /*
          Fetch some offers from YourSDK.
          */
-        YourSDK.fetchOffers { offers in
+        YourSDKInterface.fetchOffers { offers in
             guard let offer = offers.first else { return }
             self.eligibleOffer = offer
             self.imageView.image = offer.image
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         /*
          Claim an offer from YourSDK.
          */
-        YourSDK.claimOffer(offer)
+        YourSDKInterface.claimOffer(offer)
     }
     
     @IBOutlet weak var imageView: UIImageView!

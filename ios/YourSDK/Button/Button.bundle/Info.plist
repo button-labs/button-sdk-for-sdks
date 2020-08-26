@@ -15,7 +15,7 @@
 		<string>iPhoneOS</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>478</string>
+	<string>480</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -29,9 +29,9 @@
 	<key>DTSDKName</key>
 	<string>iphoneos13.2</string>
 	<key>DTXcode</key>
-	<string>1131</string>
+	<string>1121</string>
 	<key>DTXcodeBuild</key>
-	<string>11C504</string>
+	<string>11B500</string>
 	<key>MinimumOSVersion</key>
 	<string>9.0</string>
 	<key>UIAppFonts</key>

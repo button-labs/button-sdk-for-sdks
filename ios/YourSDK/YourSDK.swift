@@ -1,11 +1,11 @@
 import UIKit
-import Button
+@_implementationOnly import Button
 
 /**
 * Your SDK that makes use of the Button Publisher SDK.
 * A Partner App will interface with Your SDK, and not the Button SDK.
 */
-public class YourSDK: NSObject {
+public class YourSDKInterface: NSObject {
     
     internal static var configuration = Configuration()
     

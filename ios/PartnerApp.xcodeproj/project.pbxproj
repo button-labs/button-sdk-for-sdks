@@ -16,18 +16,28 @@
 		FB5DEDC824DB5E0700CBBE8E /* YourSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5DEDC724DB5E0700CBBE8E /* YourSDK.swift */; };
 		FB5DEDCE24DB672D00CBBE8E /* Button.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB5DEDCC24DB672C00CBBE8E /* Button.bundle */; };
 		FB5DEDCF24DB672D00CBBE8E /* Button.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5DEDCD24DB672D00CBBE8E /* Button.framework */; };
-		FB8BA37A24DCB2680046487A /* YourSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5DEDA224DB5D4B00CBBE8E /* YourSDK.framework */; };
-		FB8BA37B24DCB28B0046487A /* YourSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB5DEDA224DB5D4B00CBBE8E /* YourSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FBB54A5324F6C00F00A0C596 /* YourSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5DEDA224DB5D4B00CBBE8E /* YourSDK.framework */; };
+		FBB54A5424F6C00F00A0C596 /* YourSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FB5DEDA224DB5D4B00CBBE8E /* YourSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FBB54A5524F6C00F00A0C596 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB5DED9924DB5D4B00CBBE8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB5DEDA124DB5D4B00CBBE8E;
+			remoteInfo = YourSDK;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		FB8BA37824DC9A0C0046487A /* Embed Frameworks */ = {
+		FBB54A5724F6C00F00A0C596 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FB8BA37B24DCB28B0046487A /* YourSDK.framework in Embed Frameworks */,
+				FBB54A5424F6C00F00A0C596 /* YourSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +58,7 @@
 		FB5DEDC724DB5E0700CBBE8E /* YourSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSDK.swift; sourceTree = "<group>"; };
 		FB5DEDCC24DB672C00CBBE8E /* Button.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Button.bundle; sourceTree = "<group>"; };
 		FB5DEDCD24DB672D00CBBE8E /* Button.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Button.framework; sourceTree = "<group>"; };
+		FBFB566324EC5452001313D2 /* YourSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = YourSDK.xcframework; path = Build/YourSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB8BA37A24DCB2680046487A /* YourSDK.framework in Frameworks */,
+				FBB54A5324F6C00F00A0C596 /* YourSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +136,7 @@
 		FB8BA37924DCB2680046487A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBFB566324EC5452001313D2 /* YourSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,11 +180,12 @@
 				FB5DEDAD24DB5D9B00CBBE8E /* Sources */,
 				FB5DEDAE24DB5D9B00CBBE8E /* Frameworks */,
 				FB5DEDAF24DB5D9B00CBBE8E /* Resources */,
-				FB8BA37824DC9A0C0046487A /* Embed Frameworks */,
+				FBB54A5724F6C00F00A0C596 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FBB54A5624F6C00F00A0C596 /* PBXTargetDependency */,
 			);
 			name = PartnerApp;
 			productName = PartnerApp;
@@ -257,6 +270,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBB54A5624F6C00F00A0C596 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB5DEDA124DB5D4B00CBBE8E /* YourSDK */;
+			targetProxy = FBB54A5524F6C00F00A0C596 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FB5DEDB924DB5D9C00CBBE8E /* Main.storyboard */ = {
@@ -479,6 +500,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PartnerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,6 +524,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PartnerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
